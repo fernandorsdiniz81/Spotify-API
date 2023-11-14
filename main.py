@@ -1,7 +1,6 @@
 import requests, os
 from requests.auth import HTTPBasicAuth
 from flask import Flask, render_template, request
-import os
 from dotenv import load_dotenv
 load_dotenv()
 
