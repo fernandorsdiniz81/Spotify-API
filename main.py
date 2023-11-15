@@ -1,14 +1,17 @@
 import requests, os
 from requests.auth import HTTPBasicAuth
 from flask import Flask, render_template, request
-from dotenv import load_dotenv
-load_dotenv()
+#from dotenv import load_dotenv
+#load_dotenv()
 
 
 def get_response(year):
 	################ log in API ##################
-	clientID = os.getenv("clientID")
-	clientSecret = os.getenv("clientSecret")
+	# clientID = os.getenv("clientID")
+	# clientSecret = os.getenv("clientSecret")
+	clientID = os.environ["clientID"]
+	clientSecret = os.environ["clientSecret"]
+	
 	url = "https://accounts.spotify.com/api/token"
 	data = {"grant_type": "client_credentials"}
 	auth = HTTPBasicAuth(clientID, clientSecret)
